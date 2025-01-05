@@ -10,9 +10,13 @@ import { getActiveMenu } from "./main.js";
 export function renderTask() {
   const taskSection = document.querySelector("#taskSection");
   taskSection.innerHTML = "";
-  tasks.forEach((task) => {
+
+  let rev = [...tasks].reverse();
+  rev.forEach((task) => {
     if (
-      (getSearchValue() !== "" && task.title.includes(getSearchValue())) ||
+      (getSearchValue() !== "" &&
+        task.title.toLocaleLowerCase().includes(getSearchValue())) ||
+      getActiveMenu() === "all" ||
       task.status === getActiveMenu()
     ) {
       const taskDiv = document.createElement("div");
@@ -29,20 +33,9 @@ export function renderTask() {
           : ""
       );
       taskDiv.innerHTML = `
-         <div class="boxSection1 ${
-           task.status === "pending"
-             ? "pendingtask"
-             : task.status === "completed"
-             ? "completedtask"
-             : task.status === "cancled"
-             ? "cancledtask"
-             : task.status === "deleted"
-             ? "deletedtask"
-             : ""
-         }">
+         <div class="boxSection1">
                 <input type="checkbox" class="blank-box" />
                 <h3 class="title">${task.title}</h3>
-                <i class="down-icon ri-arrow-down-s-fill down-arrow"></i>
               </div>
               <div class="boxSection2">
                 <p class="description">
@@ -50,17 +43,22 @@ export function renderTask() {
                 </p>
                 <div class="spanPart">
                   <span class="mydate">${task.dateTime}</span>
-                  <span class="myid">${task.id}</span>
-                  <span class="status">${task.status}</span>
-                  <button class="del-btn btn">
-                    Delete
-                  </button>
-                  <button class="edit-btn2 btn">
-                    Edit
-                  </button>
-                  <button class="cancel-btn btn">
-                    Cancel
-                  </button>
+                  <div>
+                  ${
+                    task.status !== "deleted"
+                      ? `<button class="del-btn btn">
+                      Delete
+                    </button>`
+                      : ""
+                  }
+                  ${
+                    task.status !== "cancled"
+                      ? `<button class="cancel-btn btn">
+                      Cancel
+                    </button>`
+                      : ""
+                  }
+                  </div>
                   
                 </div>
               </div>
@@ -75,12 +73,12 @@ export function renderTask() {
       });
 
       const delBtn = taskDiv.querySelector(".del-btn");
-      delBtn.addEventListener("click", () => {
+      delBtn?.addEventListener("click", () => {
         deleteFun(task);
       });
 
       const cancelBtn = taskDiv.querySelector(".cancel-btn");
-      cancelBtn.addEventListener("click", () => {
+      cancelBtn?.addEventListener("click", () => {
         cancelFun(task);
       });
 
@@ -88,8 +86,6 @@ export function renderTask() {
     }
   });
 }
-
-
 
 // let searchValue = "";
 // let activeMenu = "pending";

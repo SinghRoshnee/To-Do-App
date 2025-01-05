@@ -20,7 +20,6 @@ body {
   background: var(--primaryBgColor);
   color: var(--primaryTextColor);
   scroll-behavior: smooth;
-  cursor: pointer;
 }
 
 .mainContainer {
@@ -102,6 +101,9 @@ body {
 
 .rightSection {
   width: 62%;
+  height: 89vh;
+  overflow-y: auto;
+  padding-bottom: 40px;
   margin: 40px 30px;
   background: var(--secondaryBgColor);
   border-radius: 10px;
@@ -114,7 +116,7 @@ body {
   margin: 20px 20px;
 }
 
-.name-display-part{
+.name-display-part {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,12 +142,14 @@ body {
 .editbtn1 {
   padding-right: 10px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .saveBtn {
   display: none;
   padding-right: 10px;
   cursor: pointer;
+  font-size: 25px;
 }
 
 /*searchBar part*/
@@ -207,6 +211,9 @@ body {
   /* gap: 8px; */
   margin: 0 30px;
   margin-top: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .boxSection1 {
@@ -236,7 +243,6 @@ body {
   flex-direction: column;
   margin: 5px 30px;
   justify-content: flex-start;
-  padding: 10px;
 }
 
 .description {
@@ -268,26 +274,32 @@ body {
 }
 
 .del-btn {
-  background: #2e2728;
-  color: #bca081;
+  background: #741515;
+  color: #fff2f2;
+  cursor: pointer;
 }
 
 .cancel-btn {
-  background: #2e2728;
-  color: #bca081;
+  background: #20212c;
+  color: #b6b4e5;
+  cursor: pointer;
 }
 
 /*input form*/
 
 .task-form {
   background: #0d0e21;
-  height: 35vh;
+  /* height: 35vh; */
   width: 25vw;
   border-radius: 10px;
   color: #ffffff;
-  
+  padding: 20px;
   display: none;
   z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .input-task-form {
   display: flex;
@@ -375,18 +387,18 @@ body {
   transition: filter 0.3s ease;
 }
 
-.pendingtask{
-  background:rgb(208, 172, 106);
+.pendingtask {
+  background: #ffe93e24;
 }
 
-.completedtask{
-  background: rgb(116, 224, 116);
+.completedtask {
+  background: #41ff3e24;
 }
 
-.cancledtask{
-  background: blue;
+.cancledtask {
+  background: #79b5ff10;
 }
 
-.deletedtask{
-  background: red;
+.deletedtask {
+  background: #ff3e3e24;
 }

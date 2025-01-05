@@ -16,20 +16,25 @@ export function formDisplay() {
   inputForm.addEventListener("submit", (e) => {
     taskForm.style.display = "none";
     e.preventDefault();
-    const titleValue = document.querySelector("#tit").value;
-    const descriptionValue = document.querySelector("#des").value;
+    const title = document.querySelector("#tit");
+    const description = document.querySelector("#des");
 
     const date = new Date();
-    const formatDate = date.toLocaleDateString();
+    const formatDate = date.toLocaleString();
 
     let newTaskObj = {
       id: Date.now(),
-      title: titleValue,
-      description: descriptionValue,
+      title: title.value,
+      description: description.value,
       status: `pending`,
       dateTime: formatDate,
     };
+
     tasks.push(newTaskObj);
+
+    title.value = "";
+    description.value = "";
+
     renderTask();
   });
 }

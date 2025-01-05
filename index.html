@@ -16,6 +16,26 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="task-form" id="task-form">
+      <form class="input-task-form" id="input-task-form">
+        <div class="form-section-one">
+          <h4 class="form-txt">Add Task</h4>
+          <i class="ri-close-fill close-btn" id="close-btn"></i>
+        </div>
+        <div class="input-div">
+          <input type="text" id="tit" placeholder="Enter task title" />
+          <textarea
+            id="des"
+            placeholder="Enter task description"
+            cols="1"
+            rows="1"
+            style="resize: none"
+          ></textarea>
+        </div>
+        <button class="task-sub-btn">Submit</button>
+      </form>
+    </div>
+
     <div class="mainContainer" id="mainContainer">
       <div class="leftSection">
         <!-- Top Button -->
@@ -26,21 +46,24 @@
         <!-- Menu Items -->
         <div class="menu">
           <div class="menuItem active" data-value="pending">
-            <i class="ri-inbox-line"></i> Pending Task
+            <i class="ri-time-line"></i> Pending Tasks
+          </div>
+          <div class="menuItem" data-value="all">
+            <i class="ri-inbox-line"></i> All Tasks
           </div>
           <div class="menuItem" data-value="completed">
-            <i class="ri-check-line"></i> Complete Task
+            <i class="ri-check-line"></i> Completed Tasks
           </div>
           <div class="menuItem" data-value="cancled">
-            <i class="ri-calendar-close-fill"></i> Cancled Task
+            <i class="ri-calendar-close-fill"></i> Cancelled Tasks
           </div>
           <div class="menuItem" data-value="deleted">
-            <i class="ri-delete-bin-fill"></i>Deleted Task
+            <i class="ri-delete-bin-fill"></i>Deleted Tasks
           </div>
         </div>
 
         <!-- Bottom Branding -->
-        <div class="branding">Task Tracker © 2024</div>
+        <div class="branding">Task Tracker © 2025</div>
       </div>
 
       <div class="rightSection">
@@ -51,7 +74,7 @@
             ><input
               type="text"
               id="userNameInput"
-              placeholder="Enter app name"
+              placeholder="Custom App Name"
               disabled="true"
             />
           </div>
@@ -59,35 +82,16 @@
             <input
               type="search"
               id="searchbar"
-              placeholder="search using Title"
+              placeholder="Search with Title"
             />
             <i class="ri-search-line search-icon"></i>
           </div>
         </div>
         <div class="middleRightSection">
           <div class="mainTaskContainer" id="mainTaskContainer">
-            <h3 class="add-task-txt">Added Task:-</h3>
+            <h3 class="add-task-txt">Tasks:</h3>
           </div>
           <div class="taskSection" id="taskSection"></div>
-          <div class="task-form" id="task-form">
-            <form class="input-task-form" id="input-task-form">
-              <div class="form-section-one">
-                <h4 class="form-txt">Input Form</h4>
-                <i class="ri-close-fill close-btn" id="close-btn"></i>
-              </div>
-              <div class="input-div">
-                <input type="text" id="tit" placeholder="enter your title" />
-                <textarea
-                  id="des"
-                  placeholder="your address.."
-                  cols="1"
-                  rows="1"
-                  style="resize: none"
-                ></textarea>
-              </div>
-              <button class="task-sub-btn">Submit</button>
-            </form>
-          </div>
         </div>
       </div>
     </div>
