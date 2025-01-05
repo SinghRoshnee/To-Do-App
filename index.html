@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="mainContainer" id="mainContainer">
+      <div class="leftSection">
+        <!-- Top Button -->
+        <button class="trackNewTaskBtn" id="add-task-btn">
+          <i class="ri-add-line"></i> Add New Task
+        </button>
+
+        <!-- Menu Items -->
+        <div class="menu">
+          <div class="menuItem active" data-value="pending">
+            <i class="ri-inbox-line"></i> Pending Task
+          </div>
+          <div class="menuItem" data-value="completed">
+            <i class="ri-check-line"></i> Complete Task
+          </div>
+          <div class="menuItem" data-value="cancled">
+            <i class="ri-calendar-close-fill"></i> Cancled Task
+          </div>
+          <div class="menuItem" data-value="deleted">
+            <i class="ri-delete-bin-fill"></i>Deleted Task
+          </div>
+        </div>
+
+        <!-- Bottom Branding -->
+        <div class="branding">Task Tracker © 2024</div>
+      </div>
+
+      <div class="rightSection">
+        <div class="topRightSection">
+          <div class="name-display-part">
+            <i class="ri-edit-2-fill editbtn1" id="editbtn1"></i
+            ><i class="ri-save-line saveBtn" id="saveBtn"></i
+            ><input
+              type="text"
+              id="userNameInput"
+              placeholder="Enter app name"
+              disabled="true"
+            />
+          </div>
+          <div class="searchBarPart">
+            <input
+              type="search"
+              id="searchbar"
+              placeholder="search using Title"
+            />
+            <i class="ri-search-line search-icon"></i>
+          </div>
+        </div>
+        <div class="middleRightSection">
+          <div class="mainTaskContainer" id="mainTaskContainer">
+            <h3 class="add-task-txt">Added Task:-</h3>
+          </div>
+          <div class="taskSection" id="taskSection"></div>
+          <div class="task-form" id="task-form">
+            <form class="input-task-form" id="input-task-form">
+              <div class="form-section-one">
+                <h4 class="form-txt">Input Form</h4>
+                <i class="ri-close-fill close-btn" id="close-btn"></i>
+              </div>
+              <div class="input-div">
+                <input type="text" id="tit" placeholder="enter your title" />
+                <textarea
+                  id="des"
+                  placeholder="your address.."
+                  cols="1"
+                  rows="1"
+                  style="resize: none"
+                ></textarea>
+              </div>
+              <button class="task-sub-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="javascript/main.js" type="module"></script>
+    <script src="javascript/search.js" type="module"></script>
+  </body>
+</html>
