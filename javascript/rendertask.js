@@ -15,7 +15,7 @@ export function renderTask() {
   rev.forEach((task) => {
     if (
       (getSearchValue() !== "" &&
-        task.title.toLocaleLowerCase().includes(getSearchValue())) ||
+        task.title.includes(getSearchValue())) ||
       getActiveMenu() === "all" ||
       task.status === getActiveMenu()
     ) {

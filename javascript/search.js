@@ -1,4 +1,9 @@
-import { setSearchValue, getSearchValue, setActiveMenu, menuItem } from "./main.js";
+import {
+  setSearchValue,
+  getSearchValue,
+  setActiveMenu,
+  menuItem,
+} from "./main.js";
 import { renderTask } from "./rendertask.js";
 
 const searchBar = document.querySelector("#searchbar");
