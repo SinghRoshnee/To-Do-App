@@ -16,20 +16,3 @@ export function navMenu() {
     });
   });
 }
-
-
-// export function navMenu() {
-//   menuItem.forEach((nav) => {
-//     nav.addEventListener("click", () => {
-//       if (searchValue === "") {
-//         menuItem.forEach((navlink) => {
-//           navlink.classList.remove("active");
-//         });
-//         nav.classList.add("active");
-//         const value = nav.getAttribute("data-value");
-//         setActiveMenu(value);
-//         renderTask();
-//       }
-//     });
-//   });
-// }

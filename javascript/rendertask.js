@@ -2,7 +2,9 @@ import { tasks } from "./tasks.js";
 import { handleCheckboxClick } from "./updateStatus.js";
 import { deleteFun } from "./updateStatus.js";
 import { cancelFun } from "./updateStatus.js";
-//import { mname } from "./updateStatus.js";
+import { editfun } from "./edit.js";
+import {seteditvarvalue} from "./main.js";
+
 
 import { getSearchValue } from "./main.js";
 import { getActiveMenu } from "./main.js";
@@ -15,7 +17,7 @@ export function renderTask() {
   rev.forEach((task) => {
     if (
       (getSearchValue() !== "" &&
-        task.title.includes(getSearchValue())) ||
+        task.title.toLowerCase().includes(getSearchValue())) ||
       getActiveMenu() === "all" ||
       task.status === getActiveMenu()
     ) {
@@ -58,6 +60,9 @@ export function renderTask() {
                     </button>`
                       : ""
                   }
+                  <button class="edit-btn btn">
+                     Edit
+                    </button>
                   </div>
                   
                 </div>
@@ -82,49 +87,12 @@ export function renderTask() {
         cancelFun(task);
       });
 
-      //mname(task);
+     
+      const editBtn = taskDiv.querySelector(".edit-btn");
+      editBtn.addEventListener("click", () => {
+        seteditvarvalue(task.id)
+        editfun(task)
+      });
     }
   });
 }
-
-// let searchValue = "";
-// let activeMenu = "pending";
-// const menuItem = document.querySelectorAll(".menuItem");
-
-// menuItem.forEach((nav) => {
-//   nav.addEventListener("click", () => {
-//     if (searchValue === "") {
-//       menuItem.forEach((navlink) => {
-//         navlink.classList.remove("active");
-//       });
-//       nav.classList.add("active");
-//       const value = nav.getAttribute("data-value");
-//       activeMenu = value;
-//       renderTask();
-//     }
-//   });
-// });
-
-// const searchBar = document.querySelector("#searchbar");
-// searchBar.addEventListener("input", () => {
-//   searchValue = searchBar.value;
-
-//   if (searchValue !== "") {
-//     search();
-//   } else {
-//     const pendingMenu = document.querySelector("div[data-value = 'pending']");
-//     pendingMenu.classList.add("active");
-//     activeMenu = "pending";
-//     searchValue = "";
-//     renderTask();
-//   }
-// });
-
-// function search() {
-//   menuItem.forEach((item) => {
-//     item.classList.remove("active");
-//   });
-//   searchValue = searchBar.value;
-//   activeMenu = "";
-//   renderTask();
-// }

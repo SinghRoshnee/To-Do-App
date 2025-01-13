@@ -1,8 +1,20 @@
 import { tasks } from "./tasks.js";
 import { displayAppName } from "./updateName.js";
 import { renderTask } from "./rendertask.js";
-import { formDisplay } from "./addTask.js";
 import { navMenu } from "./nav.js";
+import { searchM } from "./search.js";
+import { checkfunAddEdit } from "./addTask.js";
+
+export let editvar = null;
+
+export function seteditvarvalue(val) {
+  editvar = val;
+  console.log(editvar);
+}
+
+export function geteditvarValue() {
+  return editvar;
+}
 
 export let searchValue = "";
 export let activeMenu = "pending";
@@ -25,9 +37,9 @@ export function getActiveMenu() {
 
 export let menuItem = document.querySelectorAll(".menuItem");
 
-
 console.log(tasks);
 displayAppName();
 renderTask();
-formDisplay();
 navMenu();
+searchM();
+checkfunAddEdit();
