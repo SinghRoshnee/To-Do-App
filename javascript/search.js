@@ -24,6 +24,7 @@ function search() {
     item.classList.remove("active");
   });
   setActiveMenu(""); // Reset `activeMenu`
+  // setSearchValue("");
   renderTask();
 }
 

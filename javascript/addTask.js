@@ -2,6 +2,7 @@ import { tasks } from "./tasks.js";
 import { renderTask } from "./rendertask.js";
 import { geteditvarValue } from "./main.js";
 import { editfun } from "./edit.js";
+import { addlocalStorage } from "./tasks.js";
 
 export function checkfunAddEdit() {
   if (geteditvarValue() !== null) {
@@ -44,28 +45,11 @@ function addTask() {
 
     tasks.push(newTaskObj);
 
+    addlocalStorage();
+
     title.value = "";
     description.value = "";
 
     renderTask();
   });
 }
-
-// if (geteditvarValue() !== null) {
-//   editfun();
-// } else {
-//   let newTaskObj = {
-//     id: Date.now(),
-//     title: title.value,
-//     description: description.value,
-//     status: `pending`,
-//     dateTime: formatDate,
-//   };
-
-//   tasks.push(newTaskObj);
-
-//   title.value = "";
-//   description.value = "";
-
-//   renderTask();
-// }

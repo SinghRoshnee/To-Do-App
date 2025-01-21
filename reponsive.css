@@ -1,0 +1,255 @@
+@media screen and (max-width: 992px) {
+  .mainContainer {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .leftSection {
+    width: 25%;
+    padding: 10px;
+    margin: 5% 10px;
+  }
+
+  .trackNewTaskBtn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .menuItem {
+    font-size: 13px;
+  }
+
+  .menuItem i {
+    font-size: 15px;
+  }
+
+  .branding {
+    font-size: 12px;
+  }
+
+  /*right section*/
+
+  .rightSection {
+    width: 80%;
+    margin: 40px 10px;
+  }
+
+  .add-task-txt {
+    margin: 20px;
+  }
+
+  .box {
+    margin: 10px;
+  }
+
+  .boxSection2 {
+    margin: 3px 10px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .spanPart {
+    padding: 0;
+  }
+  .mydate{
+    font-size: 14px;
+  }
+  .btn {
+    width: 6rem;
+    padding: 6px;
+  }
+
+  /*searchbar*/
+
+  .searchBarPart {
+    position: relative;
+    width: fit-content;
+    color: #ffffff;
+  }
+
+  #searchbar {
+    width: 20vw;
+    padding: 10px 10px 10px 10px;
+    /* //margin-right: 10px; */
+  }
+
+  #searchbar::placeholder {
+    font-size: 13px;
+    color: #fff;
+    /* margin-right: 50px; */
+  }
+
+  .search-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav-toggle {
+    display: block;
+  }
+  .cancel {
+    display: block;
+  }
+  .leftSection {
+    display: none;
+  }
+
+  .mainContainer {
+    margin: 0;
+  }
+
+  .leftSection {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* margin: 20px 20px; */
+    transition: left 0.3s ease-in-out;
+    background: #121826;
+  }
+
+  .trackNewTaskBtn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .menuItem {
+    font-size: 16px;
+  }
+
+  .menuItem i {
+    font-size: 18px;
+  }
+
+  .branding {
+    font-size: 16px;
+  }
+
+  .rightSection {
+    margin: 20px;
+    width: 100%;
+  }
+
+  .searchBarPart {
+    position: relative;
+    width: fit-content;
+    color: #ffffff;
+  }
+  
+  /* Input Field */
+  #searchbar {
+    border: none;
+    outline: none;
+    /* padding: 10px 35px 10px 15px; */
+    width: 20rem;
+    border: 1px solid var(--primaryTextColor);
+    background: none;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .topRightSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .searchBarPart {
+    position: relative;
+    width: fit-content;
+    color: #ffffff;
+  }
+  
+  /* Input Field */
+  #searchbar {
+    border: none;
+    outline: none;
+    /* padding: 10px 35px 10px 15px; */
+    width: 20rem;
+    border: 1px solid var(--primaryTextColor);
+    background: none;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .spanPart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 436px) {
+  .topRightSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .searchBarPart {
+    position: relative;
+    width: fit-content;
+    color: #ffffff;
+  }
+  
+  /* Input Field */
+  #searchbar {
+    border: none;
+    outline: none;
+    /* padding: 10px 35px 10px 15px; */
+    width: 20rem;
+    border: 1px solid var(--primaryTextColor);
+    background: none;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .boxSection2 {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+    justify-content: flex-start;
+  }
+  .description {
+    padding: 6px;
+    font-size: 13px;
+  }
+  .btnPart {
+    display: flex;
+    /* background: yellow; */
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 8px;
+    width: 10rem;
+    /* margin: 5px; */
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+}
+
+

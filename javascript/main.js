@@ -9,7 +9,6 @@ export let editvar = null;
 
 export function seteditvarvalue(val) {
   editvar = val;
-  console.log(editvar);
 }
 
 export function geteditvarValue() {

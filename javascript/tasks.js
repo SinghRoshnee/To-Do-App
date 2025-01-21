@@ -1,4 +1,4 @@
-export let tasks = [
+let predefinedArr = [
   {
     id: 4,
     title: "Delete an Unnecessary Task",
@@ -32,4 +32,13 @@ export let tasks = [
   },
 ];
 
-// console.log(tasks);
+
+export let tasks = [];
+
+let todoTasks = localStorage.getItem("todoTasks");
+tasks = JSON.parse(todoTasks) || predefinedArr;
+console.log(tasks);
+
+export function addlocalStorage() {
+  localStorage.setItem("todoTasks", JSON.stringify(tasks));
+}

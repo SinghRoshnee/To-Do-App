@@ -3,9 +3,7 @@ import { handleCheckboxClick } from "./updateStatus.js";
 import { deleteFun } from "./updateStatus.js";
 import { cancelFun } from "./updateStatus.js";
 import { editfun } from "./edit.js";
-import {seteditvarvalue} from "./main.js";
-
-
+import { seteditvarvalue } from "./main.js";
 import { getSearchValue } from "./main.js";
 import { getActiveMenu } from "./main.js";
 
@@ -17,7 +15,9 @@ export function renderTask() {
   rev.forEach((task) => {
     if (
       (getSearchValue() !== "" &&
-        task.title.toLowerCase().includes(getSearchValue())) ||
+        task.title
+          .toLowerCase()
+          .includes(getSearchValue().toLocaleLowerCase())) ||
       getActiveMenu() === "all" ||
       task.status === getActiveMenu()
     ) {
@@ -44,8 +44,8 @@ export function renderTask() {
                 ${task.description}
                 </p>
                 <div class="spanPart">
-                  <span class="mydate">${task.dateTime}</span>
-                  <div>
+                  <span class="mydate">Date-Time:- ${task.dateTime}</span>
+                  <div class="btnPart">
                   ${
                     task.status !== "deleted"
                       ? `<button class="del-btn btn">
@@ -60,13 +60,16 @@ export function renderTask() {
                     </button>`
                       : ""
                   }
-                  <button class="edit-btn btn">
-                     Edit
-                    </button>
+                  ${
+                    ["pending", "cancled"].includes(task.status)
+                      ? `<button class="edit-btn btn">Edit</button>`
+                      : ""
+                  }
                   </div>
                   
                 </div>
               </div>
+              
     `;
 
       taskSection.appendChild(taskDiv);
@@ -87,12 +90,34 @@ export function renderTask() {
         cancelFun(task);
       });
 
-     
       const editBtn = taskDiv.querySelector(".edit-btn");
-      editBtn.addEventListener("click", () => {
-        seteditvarvalue(task.id)
-        editfun(task)
+      editBtn?.addEventListener("click", () => {
+        seteditvarvalue(task.id);
+        editfun(task);
       });
     }
   });
 }
+
+// ${
+//   ["pending", "completed"].includes(task.status)
+//     ? `<button class="edit-btn btn">Edit</button>`
+//     : ""
+// }
+
+// ${
+//   task.status === "pending"
+//     ? `<button class="edit-btn btn">Edit</button>`
+//     : ""
+// }
+// ${
+//   task.status === "cancled"
+//     ? `<button class="edit-btn btn">Edit</button>`
+//     : ""
+// }
+
+// const editBtn = taskDiv.querySelector(".edit-btn");
+// editBtn.addEventListener("click", () => {
+//   seteditvarvalue(task.id);
+//   editfun(task);
+// });

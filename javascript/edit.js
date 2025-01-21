@@ -1,6 +1,7 @@
 import { tasks } from "./tasks.js";
 import { renderTask } from "./rendertask.js";
 import { seteditvarvalue } from "./main.js";
+import { addlocalStorage } from "./tasks.js";
 
 const taskForm = document.querySelector("#task-form");
 const tskBtn = document.querySelector("#task-sub-btn");
@@ -37,6 +38,8 @@ export function editfun(task) {
       tasks[noteIndex].title = title.value;
       tasks[noteIndex].description = description.value;
 
+      addlocalStorage()
+
       renderTask();
 
       seteditvarvalue(null);
@@ -49,9 +52,12 @@ export function editfun(task) {
       // Remove event listener after completing the task edit
       tskBtn.removeEventListener("click", editHandler);
       closeBtn.removeEventListener("click", editHandler);
+
+      
     };
 
     tskBtn.addEventListener("click", editHandler);
     closeBtn.addEventListener("click", editHandler);
+   
   }
 }
