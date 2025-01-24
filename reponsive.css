@@ -28,8 +28,6 @@
     font-size: 12px;
   }
 
-  /*right section*/
-
   .rightSection {
     width: 80%;
     margin: 40px 10px;
@@ -48,7 +46,7 @@
   }
 
   .description {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .spanPart {
@@ -58,11 +56,9 @@
     font-size: 14px;
   }
   .btn {
-    width: 6rem;
+    width: 4rem;
     padding: 6px;
   }
-
-  /*searchbar*/
 
   .searchBarPart {
     position: relative;
@@ -71,44 +67,65 @@
   }
 
   #searchbar {
-    width: 20vw;
+    width: 15vw;
     padding: 10px 10px 10px 10px;
-    /* //margin-right: 10px; */
   }
 
   #searchbar::placeholder {
     font-size: 13px;
     color: #fff;
-    /* margin-right: 50px; */
   }
 
   .search-icon {
     display: none;
+  }
+
+  .task-form {
+    background: #0d0e21;
+    width: 20rem;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 10px;
+    display: none;
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #des {
+    width: 18rem;
+    padding: 6px;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #757685;
+    color: #ffffff;
   }
 }
 
 @media screen and (max-width: 767px) {
   .nav-toggle {
     display: block;
+    color: #fff;
   }
   .cancel {
     display: block;
+    color: #fff;
   }
-  .leftSection {
-    display: none;
-  }
-
+ 
   .mainContainer {
     margin: 0;
   }
 
   .leftSection {
+    display:none; 
     position: absolute;
-    z-index: 999;
+    z-index: 99;
     top: 0;
     width: 100%;
     height: 100%;
-    /* margin: 20px 20px; */
     transition: left 0.3s ease-in-out;
     background: #121826;
   }
@@ -141,12 +158,10 @@
     color: #ffffff;
   }
   
-  /* Input Field */
   #searchbar {
     border: none;
     outline: none;
-    /* padding: 10px 35px 10px 15px; */
-    width: 20rem;
+    width: 12rem;
     border: 1px solid var(--primaryTextColor);
     background: none;
     border-radius: 12px;
@@ -174,12 +189,10 @@
     color: #ffffff;
   }
   
-  /* Input Field */
   #searchbar {
     border: none;
     outline: none;
-    /* padding: 10px 35px 10px 15px; */
-    width: 20rem;
+    width: 15rem;
     border: 1px solid var(--primaryTextColor);
     background: none;
     border-radius: 12px;
@@ -187,6 +200,7 @@
     color: #fff;
     cursor: pointer;
   }
+
   .spanPart {
     display: flex;
     flex-direction: column;
@@ -194,6 +208,12 @@
     align-items: center;
     padding: 10px;
   }
+
+  .btn {
+    width: 6rem;
+    padding: 6px;
+  }
+  
 }
 
 @media screen and (max-width: 436px) {
@@ -202,6 +222,32 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+
+  .name-display-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #userNameInput {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all ease 0.6s;
+  }
+
+  .editbtn1{
+    font-size: 12px;
+  }
+
+  .saveBtn{
+    font-size: 12px;
   }
   .searchBarPart {
     position: relative;
@@ -213,14 +259,29 @@
   #searchbar {
     border: none;
     outline: none;
-    /* padding: 10px 35px 10px 15px; */
-    width: 20rem;
+    width: 13rem;
     border: 1px solid var(--primaryTextColor);
     background: none;
-    border-radius: 12px;
-    font-size: 14px;
+    border-radius: 10px;
+    font-size: 12px;
     color: #fff;
     cursor: pointer;
+    padding: 10px;
+  }
+  
+  .box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 8px;
+  }
+
+  .title{
+    font-size: 17px;
   }
   
   .boxSection2 {
@@ -230,26 +291,104 @@
     justify-content: flex-start;
   }
   .description {
-    padding: 6px;
-    font-size: 13px;
+    padding: 4px;
+    font-size: 14px;
   }
-  .btnPart {
+  .spanPart {
     display: flex;
-    /* background: yellow; */
     flex-direction: column;
     gap: 10px;
     align-items: center;
     padding: 10px;
   }
+  .mydate{
+    font-size: 12px;
+    font-weight: bolder;
+  }
+
+  .spanPart {
+    /* padding: 6px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+  }
+  .btnPart {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 
   .btn {
     padding: 8px;
-    width: 10rem;
-    /* margin: 5px; */
+    width: 6rem;
     border-radius: 10px;
     border: none;
     outline: none;
   }
+
+  .task-form {
+    background: #0d0e21;
+    width: 20rem;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 10px;
+    display: none;
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .input-task-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    gap:7px;
+    padding: 10px;
+    color: #ffffff;
+  }
+
+  .form-txt {
+    padding: 3px;
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  #des {
+    width: 18rem;
+    padding: 4px;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #757685;
+    color: #ffffff;
+  }
+
+  .task-sub-btn {
+    width: 10rem;
+    padding: 10px;
+    box-shadow: 0 0 3px cyan, 0 0 10px cyan;
+    border: none;
+    background: rgba(80, 235, 235, 0.718);
+    outline: none;
+    transition: all ease 0.6s;
+    margin: 10px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 300;
+  }
+  .task-sub-btn:hover {
+    box-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 15px cyan, 0 0 20px cyan,
+      0 0 20px cyan;
+  }
 }
+
+
 
 

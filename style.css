@@ -38,15 +38,15 @@ body {
   justify-content: space-between;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
   margin: 5% 10px;
+  /* display: block; */
 }
 
 /* Top Button (Track New Task) */
 
-.topLeftSection{
+.topLeftSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background: blue; */
 }
 
 .trackNewTaskBtn {
@@ -69,7 +69,7 @@ body {
   background-color: #2b5363;
 }
 
-.cancel{
+.cancel {
   display: none;
   padding: 20px;
   font-size: 20px;
@@ -113,17 +113,15 @@ body {
   text-align: center;
 }
 
-.nav-toggle{
+.nav-toggle {
   display: none;
- } 
+}
 
 /*rightsection*/
 
 .rightSection {
-  width: 80%;
-  height: 89vh;
+  width: 70%;
   overflow-y: auto;
-  /* padding-bottom: 40px; */
   margin: 40px 20px;
   background: var(--secondaryBgColor);
   border-radius: 10px;
@@ -144,7 +142,7 @@ body {
 
 #userNameInput {
   background: none;
-  border:none;
+  border: none;
   outline: none;
   font-size: 23px;
   font-weight: 500;
@@ -153,7 +151,6 @@ body {
   cursor: pointer;
   transition: all ease 0.6s;
 }
-
 
 #userNameInput:hover {
   text-shadow: 1px 1px 1px rgb(104, 209, 104);
@@ -214,18 +211,18 @@ body {
 
 /* maincontainer*/
 
-.mainTaskContainer{
+.mainTaskContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .add-task-txt {
-  margin-left:20px ;
+  margin-left: 20px;
   font-size: 17px;
 }
 
-.nav-toggle{
+.nav-toggle {
   padding: 15px;
 }
 
@@ -277,8 +274,7 @@ body {
 
 .btn {
   padding: 8px;
-  width: 8rem;
-  /* margin: 5px; */
+  width: 6rem;
   border-radius: 10px;
   border: none;
   outline: none;
@@ -305,7 +301,6 @@ body {
 
 .task-form {
   background: #0d0e21;
-  /* height: 35vh; */
   width: 25vw;
   border-radius: 10px;
   color: #ffffff;
@@ -419,7 +414,7 @@ body {
   background: #ff3e3e24;
 }
 
-.edit-btn{
+.edit-btn {
   background: #6c757d;
   color: #ffffff;
 }

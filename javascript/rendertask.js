@@ -6,6 +6,7 @@ import { editfun } from "./edit.js";
 import { seteditvarvalue } from "./main.js";
 import { getSearchValue } from "./main.js";
 import { getActiveMenu } from "./main.js";
+import { taskStatusName } from "./updateStatus.js";
 
 export function renderTask() {
   const taskSection = document.querySelector("#taskSection");
@@ -95,29 +96,8 @@ export function renderTask() {
         seteditvarvalue(task.id);
         editfun(task);
       });
+
+      taskStatusName(task)
     }
   });
 }
-
-// ${
-//   ["pending", "completed"].includes(task.status)
-//     ? `<button class="edit-btn btn">Edit</button>`
-//     : ""
-// }
-
-// ${
-//   task.status === "pending"
-//     ? `<button class="edit-btn btn">Edit</button>`
-//     : ""
-// }
-// ${
-//   task.status === "cancled"
-//     ? `<button class="edit-btn btn">Edit</button>`
-//     : ""
-// }
-
-// const editBtn = taskDiv.querySelector(".edit-btn");
-// editBtn.addEventListener("click", () => {
-//   seteditvarvalue(task.id);
-//   editfun(task);
-// });

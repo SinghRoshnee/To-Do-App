@@ -1,6 +1,7 @@
 import { tasks } from "./tasks.js";
 import { renderTask } from "./rendertask.js";
 import { addlocalStorage } from "./tasks.js";
+import { getActiveMenu } from "./main.js";
 
 export function handleCheckboxClick(task) {
   if (task.status !== "completed") {
@@ -48,3 +49,18 @@ export function cancelFun(task) {
   }
   addlocalStorage();
 }
+
+let taskTxt = document.querySelector("#add-task-txt")
+
+export function taskStatusName(task) {
+ if (task.status === "pending") {
+  taskTxt.innerHTML = "Pending Task"
+ }else if(task.status === "completed"){
+    taskTxt.innerHTML = "Completed Task"
+ }else if(task.status === "cancled"){
+  taskTxt.innerHTML = "Cancled Task"
+}else if(task.status === "deleted"){
+  taskTxt.innerHTML = "Deleted Task"
+}
+}
+

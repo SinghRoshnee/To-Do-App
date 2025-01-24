@@ -32,7 +32,6 @@ let predefinedArr = [
   },
 ];
 
-
 export let tasks = [];
 
 let todoTasks = localStorage.getItem("todoTasks");

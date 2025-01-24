@@ -4,6 +4,7 @@ import { renderTask } from "./rendertask.js";
 import { navMenu } from "./nav.js";
 import { searchM } from "./search.js";
 import { checkfunAddEdit } from "./addTask.js";
+import {navTog} from "./nav-tog.js"
 
 export let editvar = null;
 
@@ -42,3 +43,4 @@ renderTask();
 navMenu();
 searchM();
 checkfunAddEdit();
+navTog();
